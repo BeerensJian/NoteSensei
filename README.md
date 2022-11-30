@@ -8,3 +8,9 @@ A note taking app for easy note organizing and thought capturing, with an aesthe
 - emoji support would be cool
 - async saving while creating or editing note so it doesnt get lost
 - authorization and sharing of note's
+
+## Rules for myself
+
+- Write clean code
+- Keep account of what you can refractor
+- comment on code a lot so you dont't forget what certain things do
