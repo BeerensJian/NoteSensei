@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './index.scss'
+import './style.scss'
 
 // view imports
 import AppMenu from './views/AppMenu/AppMenu'
@@ -23,7 +23,6 @@ const router = createBrowserRouter([
       },
     ]
   },
-  
 ])
 
 
