@@ -1,0 +1,15 @@
+#root{
+  display: flex;
+}
+
+.app-menu {
+  height: 100vh;
+  background-color: aqua;
+  padding: 0.5rem;
+
+  h1 {
+    font-weight: 700;
+    font-size: x-large;
+    color: white;
+  }
+}
