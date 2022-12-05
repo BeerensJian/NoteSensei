@@ -8,6 +8,10 @@ import AppMenu from './views/AppMenu/AppMenu'
 import Error from './views/Error'
 import Note from './views/Note'
 import CreateNote from './views/CreateNote'
+import Home from './views/Home'
+
+// Service Imports
+import * as noteService from './services/noteService'
 
 
 
@@ -18,6 +22,11 @@ const router = createBrowserRouter([
     element: <AppMenu/>,
     errorElement: <Error/>,
     children: [
+      {
+        path: '/home',
+        element: <Home/>,
+        loader: noteService.getNotes
+      },
       {
         path: '/notes/create',
         element: <CreateNote/>

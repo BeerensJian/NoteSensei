@@ -10,7 +10,7 @@ function App() {
         <h1>NoteSensei</h1>
       </div>
       <nav>
-        <Link to='/'>Home</Link>
+        <Link to='/home'>Home</Link>
         <Link to='/notes/ee'>Note</Link>
         <Link to='/notes/create'>Create Note</Link>
       </nav>
