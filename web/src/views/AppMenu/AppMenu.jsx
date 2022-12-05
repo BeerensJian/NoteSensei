@@ -12,6 +12,7 @@ function App() {
       <nav>
         <Link to='/'>Home</Link>
         <Link to='/notes/ee'>Note</Link>
+        <Link to='/notes/create'>Create Note</Link>
       </nav>
     </header>
     <main>
