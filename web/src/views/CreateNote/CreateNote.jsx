@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import * as noteService from '../services/noteService'
+import * as noteService from '../../services/noteService'
 
 const CreateNote = () => {
     const titleRef = useRef()

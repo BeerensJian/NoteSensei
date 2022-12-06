@@ -5,10 +5,10 @@ import './style.scss'
 
 // view imports
 import AppMenu from './views/AppMenu/AppMenu'
-import Error from './views/Error'
+import Error from './views/Error/Error'
 import Note from './views/Note'
-import CreateNote from './views/CreateNote'
-import Home from './views/Home'
+import CreateNote from './views/CreateNote/CreateNote'
+import Home from './views/Home/Home'
 
 // Service Imports
 import * as noteService from './services/noteService'
