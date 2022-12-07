@@ -1,6 +1,9 @@
+// Third Party Imports
 import './App.scss'
 import { Outlet, Link } from 'react-router-dom'
 
+// Component Imports
+import FolderMenu from '../../components/FolderMenu/FolderMenu'
 
 function App() {
   return (
@@ -13,6 +16,7 @@ function App() {
         <Link to='/home'>Home</Link>
         <Link to='/notes/ee'>Note</Link>
         <Link to='/notes/create'>Create Note</Link>
+        <FolderMenu/>
       </nav>
     </header>
     <main>

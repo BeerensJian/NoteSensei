@@ -6,7 +6,6 @@ import './style.scss'
 // view imports
 import AppMenu from './views/AppMenu/AppMenu'
 import Error from './views/Error/Error'
-import Note from './views/Note'
 import CreateNote from './views/CreateNote/CreateNote'
 import Home from './views/Home/Home'
 
@@ -33,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/notes/:id',
-        element: <Note/>,
+        element: <h1>note details page</h1>,
       },
     ]
   },
