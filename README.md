@@ -1,16 +1,17 @@
 # NoteSensei
 
-A note taking app for easy note organizing and thought capturing, with an aesthetic design (hopefully). It's going to be a project for myself to work and reinforce my skills with React & nodeJS.
+A note taking app for easy note organizing and thought capturing, with an aesthetic design (hopefully in the future). It's mainly gonna be a project for me to keep my skills up to date and try out new technoligies and ways of working.
 
 ## Features I want to include
 - Markdown/rich text support
 - Organizing in folders and sub folders
 - emoji support would be cool
 - async saving while creating or editing note so it doesnt get lost
-- authorization and sharing of note's
+- Authentication
+- public sharing of note's (via url)
+- Security ( Route protection, request validation, ...)
 
 ## Rules for myself
 
-- Write clean code
-- Keep account of what you can refractor
-- comment on code a lot so you dont't forget what certain things do
+- Write clean code ( refractor day every now and then )
+- Comment a lot to check & retain my knowledge
