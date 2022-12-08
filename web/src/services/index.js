@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const httpClient = axios.create({ // create new instance of axios with custom configurations
-    baseURL: 'http://localhost:4000',
+    baseURL: process.env.BACKEND_URL,
     timeout: 2000
 })
 
