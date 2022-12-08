@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const httpClient = axios.create({ // create new instance of axios with custom configurations
-    baseURL: process.env.BACKEND_URL,
+    baseURL: import.meta.env.VITE_BACKEND_URL,
     timeout: 2000
 })
 
