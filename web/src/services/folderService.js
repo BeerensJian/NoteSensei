@@ -8,3 +8,12 @@ export const readFolders = async () => {
     console.error(error)
   }
 }
+
+export const createFolder = async (folder) => {
+  try {
+    const response = await httpClient.post('/folders', folder)
+    return response?.data
+  } catch (error) {
+    console.error(error)
+  }
+}

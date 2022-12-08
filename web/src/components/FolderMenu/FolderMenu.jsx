@@ -1,14 +1,22 @@
 // Third Part Imports
 import { useState, useEffect } from 'react';
+import { useRef } from 'react';
 
 // Component Imports
 import FolderListItem from '../FolderListItem/FolderListItem'
 import * as folderService from '../../services/folderService'
+import Modal from '../Modal/Modal';
 
 
 const FolderMenu = () => {
-  const [showInput, setShowInput] = useState(false)
   const [folders, setFolders] = useState([])
+  const [openModal, setOpenModal] = useState(false)
+
+  const createFolder = async (name) => {
+    const { response : newFolder} = await folderService.createFolder({ name })
+    setFolders((prevFolders) => [...prevFolders, newFolder])
+    setOpenModal(false)
+  }
 
   useEffect(() =>{
     const getFolders = async () => {
@@ -19,18 +27,17 @@ const FolderMenu = () => {
   }, [])
 
   return(
+    <>
     <div className='folder-menu'>
       <div className='folder-menu__add'>
         <p>folders</p>
-        <button onClick={() => setShowInput(!showInput)}>+</button>
-        { showInput && 
-        <div>
-          <input type="text" />
-          <button>v</button>
-        </div>}
+        <button onClick={() => setOpenModal(true)}>+</button>
       </div>
       
-      {folders.map(f => <FolderListItem name={f.name}/>)}
-    </div>)
+      {folders.map(f => <FolderListItem key={f._id} name={f.name}/>)}
+    </div>
+    <Modal open={openModal} closeModal={() => setOpenModal(false)} label='Folder name:' buttonName='Create' action={(value) => createFolder(value)}/>
+    </>
+    )
 }
 export default FolderMenu;

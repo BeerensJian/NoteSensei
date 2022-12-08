@@ -1,6 +1,5 @@
 import { useLoaderData, Link } from 'react-router-dom';
 import Note from '../../components/note/Note'
-import Icon from '../../components/Icon/Icon';
 
 const Home = () => {
   const { response: notes } = useLoaderData() // get the data from the loader, rename response to notes
