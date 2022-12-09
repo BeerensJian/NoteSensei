@@ -1,6 +1,5 @@
 // Third Part Imports
 import { useState, useEffect } from 'react';
-import { useRef } from 'react';
 
 // css
 import './folderMenu.css'
