@@ -37,7 +37,7 @@ const FolderMenu = () => {
         <button onClick={() => setOpenModal(true)}>+</button>
       </div>
       
-      {folders.map(f => <FolderListItem key={f._id} name={f.name}/>)}
+      {folders.map(f => <FolderListItem key={f._id} {...f}/>)}
     </div>
     <Modal open={openModal} closeModal={() => setOpenModal(false)} label='Folder name:' buttonName='Create' action={(value) => createFolder(value)}/>
     </>
