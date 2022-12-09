@@ -2,6 +2,9 @@
 import { useState, useEffect } from 'react';
 import { useRef } from 'react';
 
+// css
+import './folderMenu.css'
+
 // Component Imports
 import FolderListItem from '../FolderListItem/FolderListItem'
 import * as folderService from '../../services/folderService'

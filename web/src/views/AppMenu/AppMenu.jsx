@@ -1,5 +1,5 @@
 // Third Party Imports
-import './App.scss'
+import './AppMenu.css'
 import { Outlet, Link } from 'react-router-dom'
 
 // Component Imports

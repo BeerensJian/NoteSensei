@@ -1,0 +1,21 @@
+
+.app-menu {
+  height: 100vh;
+  background-color: var(--bg-dark);
+  padding: 0.5rem;
+  color: var(--text-light);
+}
+.app-menu h1 {
+  font-weight: 700;
+  font-size: x-large;
+  color: white;
+}
+.app-menu nav {
+  display: flex;
+  flex-direction: column;
+}
+.app-menu nav a {
+  text-decoration: none;
+  color: var(--text-light);
+}
+

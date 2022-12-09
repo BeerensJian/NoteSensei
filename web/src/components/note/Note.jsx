@@ -1,5 +1,5 @@
 // compact representation of a single note in the Home Screen
-
+import './Note.css'
 const Note = ({ note }) => {
   return(
     <div className='note'>

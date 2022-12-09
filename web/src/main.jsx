@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './style.scss'
+import './style.css'
 
 // view imports
 import AppMenu from './views/AppMenu/AppMenu'
