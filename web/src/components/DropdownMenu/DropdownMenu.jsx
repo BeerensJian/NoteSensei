@@ -7,7 +7,7 @@ const DropdownMenu = ({ anchorElement, show, onClickOutside }) => {
   // When the user clicks outside component -> close component
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (ref.current && !ref.current.contains(event.target)) {
+      if (ref.current && !ref.current.contains(event.target) && !anchorElement.current.contains(event.target)) {
         onClickOutside();
       }
     };
