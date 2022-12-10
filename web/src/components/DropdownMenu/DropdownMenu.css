@@ -1,0 +1,6 @@
+.dropdown-menu {
+  background-color: rgb(191, 191, 191);
+  padding: 16px;
+  position: absolute;
+  z-index: 1;
+}

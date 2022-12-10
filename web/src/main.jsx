@@ -11,6 +11,7 @@ import Home from './views/Home/Home'
 
 // Service Imports
 import * as noteService from './services/noteService'
+import Test from './views/Test/Test'
 
 
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         path: '/notes/:id',
         element: <h1>note details page</h1>,
       },
+      {
+        path: 'test',
+        element: <Test/>
+      }
     ]
   },
 ])
