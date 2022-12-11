@@ -15,9 +15,3 @@ A note taking app for easy note organizing and thought capturing, with an aesthe
 
 - Write clean code ( refractor day every now and then )
 - Comment a lot to check & retain my knowledge
-
-## Todolist
-
-1. Refractor (scss to css)
-2. Able to create subfolders
-3. Able to create notes in folder
