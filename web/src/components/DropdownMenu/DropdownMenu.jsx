@@ -1,14 +1,15 @@
 import { useRef, useEffect } from "react";
 import "./DropdownMenu.css";
 
-const DropdownMenu = ({ anchorElement, show, onClickOutside }) => {
+const DropdownMenu = ({ anchorElement, show}) => {
   const ref = useRef(null);
 
   // When the user clicks outside component -> close component
   useEffect(() => {
     const handleClickOutside = (event) => {
+      console.log(!anchorElement.current.contains(event.target))
       if (ref.current && !ref.current.contains(event.target) && !anchorElement.current.contains(event.target)) {
-        onClickOutside();
+        show(false);
       }
     };
     document.addEventListener("click", handleClickOutside, true);
@@ -17,9 +18,6 @@ const DropdownMenu = ({ anchorElement, show, onClickOutside }) => {
     };
   }, []);
 
-  if (!show) {
-    return null;
-  }
 
   const offset = {
     // width and height of anchorElement

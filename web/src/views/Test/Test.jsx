@@ -5,18 +5,14 @@ import DropdownMenu from "../../components/DropdownMenu/DropdownMenu"
 
 const Test = () => {
   const [showDropdown, setShowDropdown] = useState(false)
-  const [ref, setRef] = useState(null)
   const buttonRef = useRef()
 
-  useEffect(() => {
-    setRef(buttonRef)
-  }, [])
 
   return(
     <div>
       <h1>Test page</h1>
       <button ref={buttonRef} onClick={() => setShowDropdown(!showDropdown)}>open</button>
-      <DropdownMenu anchorElement={ref} show={showDropdown} onClickOutside={() => setShowDropdown(false)}/>
+      {showDropdown && <DropdownMenu anchorElement={buttonRef} show={(value) => setShowDropdown(value)}/>}
     </div>
   )
 }
