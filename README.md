@@ -1,6 +1,6 @@
 # NoteSensei
 
-A note taking app for easy note organizing and thought capturing, with an aesthetic design (hopefully in the future, looks ugly rn). It's mainly gonna be a project for me to keep my skills up to date and try out new technoligies and ways of working.
+Is an app for organising knowledge or taking quick notes and todo's. The project is currently in it's infancy stages and I'm mainly focusing on adding functionality while not paying too much attention in making everything look nice (I'm sorry for your eyes in advance) but don't worry, I will start improving the design when I feel like enough functionality is has been added.
 
 ## Features I want to include
 - Markdown/rich text support
