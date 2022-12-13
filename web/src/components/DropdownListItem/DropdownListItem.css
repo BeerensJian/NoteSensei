@@ -1,0 +1,13 @@
+.dropdown-listitem {
+  padding: 8px 16px;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-listitem:hover {
+  background-color: aqua;
+
+}
