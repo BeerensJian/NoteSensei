@@ -7,23 +7,22 @@ import './folderMenu.css'
 // Component Imports
 import FolderListItem from '../FolderListItem/FolderListItem'
 import * as folderService from '../../services/folderService'
-import Modal from '../Modal/Modal';
+import CreateFolderModal from '../Modal/CreateFolderModal';
 
 
 const FolderMenu = () => {
   const [folders, setFolders] = useState([])
   const [openModal, setOpenModal] = useState(false)
 
-  const createFolder = async (name) => {
-    const { response : newFolder} = await folderService.createFolder({ name })
-    setFolders((prevFolders) => [...prevFolders, newFolder])
-    setOpenModal(false)
+  const reload = async () => {
+    const { response: fetchedFolders } = await folderService.readFolders()
+    setFolders(fetchedFolders)
   }
 
   useEffect(() =>{
     const getFolders = async () => {
-      const { response } = await folderService.readFolders()
-      setFolders(response)
+      const { response: fetchedFolders } = await folderService.readFolders()
+      setFolders(fetchedFolders)
     }
     getFolders()
   }, [])
@@ -38,7 +37,8 @@ const FolderMenu = () => {
       
       {folders.map(f => <FolderListItem key={f._id} {...f}/>)}
     </div>
-    <Modal open={openModal} closeModal={() => setOpenModal(false)} label='Folder name:' buttonName='Create' action={(value) => createFolder(value)}/>
+    {openModal && <CreateFolderModal closeModal={() => setOpenModal(false)} buttonName='Create' reload={reload}/>}
+    
     </>
     )
 }

@@ -1,7 +1,8 @@
-import { useRef, useEffect } from "react";
-import "./DropdownMenu.css";
+import { useRef, useEffect } from "react"
+import DropdownListItem from '../DropdownListItem/DropdownListItem'
+import "./DropdownMenu.css"
 
-const DropdownMenu = ({ anchorElement, show}) => {
+const DropdownMenu = ({ anchorElement, show }) => {
   const ref = useRef(null);
 
   // When the user clicks outside component -> close component
@@ -18,6 +19,7 @@ const DropdownMenu = ({ anchorElement, show}) => {
     };
   }, []);
 
+  // styling and placement
 
   const offset = {
     // width and height of anchorElement
@@ -29,13 +31,15 @@ const DropdownMenu = ({ anchorElement, show}) => {
   };
 
   const styleObj = {
-    top: offset.top + "px",
-    left: offset.left + offset.width + 5 + "px",
+    top: offset.top + 'px',
+    left: offset.left + offset.width + 5 + 'px',
   };
 
   return (
-    <div ref={ref} style={styleObj} className="dropdown-menu">
-      <span className="title">Tooltip text</span>
+    <div ref={ref} style={styleObj} className='dropdown-menu'>
+      <DropdownListItem>Create Subfolder</DropdownListItem>
+      <DropdownListItem>Edit</DropdownListItem>
+      <DropdownListItem>Create Note</DropdownListItem>
     </div>
   );
 };

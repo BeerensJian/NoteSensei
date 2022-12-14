@@ -2,23 +2,15 @@ import { useRef } from "react"
 import Backdrop from "../Backdrop/Backdrop";
 import './Modal.css'
 
-const Modal = ({buttonName, label, open, closeModal, action}) => {
-  const inputRef = useRef() // using refs because we only need the value once
+const Modal = ({buttonName, children, closeModal, action}) => {
   
-  if (!open) {
-    return null;
-  }
-
   return (
     <Backdrop>
       <div className="modal-container">
-        <div className="modal-input">
-          <label htmlFor="modalInput">{label}</label>
-          <input ref={inputRef} type="text" id="modalInput"/>
-        </div>
+        {children}
         <div className="modal-options">
           <button onClick={closeModal}>Exit</button>
-          <button onClick={() => action(inputRef.current.value)}>{buttonName}</button>
+          <button onClick={action}>{buttonName}</button>
         </div>
       </div>
     </Backdrop>
