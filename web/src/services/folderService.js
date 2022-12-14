@@ -9,6 +9,15 @@ export const readFolders = async () => {
   }
 }
 
+export const readSubFolders = async (parentId) => {
+  try {
+    const response = await httpClient.get(`/folders/sub/${parentId}`)
+    return response?.data
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 export const createFolder = async (folder) => {
   try {
     const response = await httpClient.post('/folders', folder)
