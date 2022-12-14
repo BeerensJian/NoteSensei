@@ -1,12 +1,16 @@
 import res from 'express/lib/response.js'
 import * as folderService from '../services/folderService.js'
+
+// Returning and object with a response property to support adding message property in the future
+
+
 // get all root folders
 export const readFolders = async (req, res) => {
   const folders = await folderService.readFolders({parent : null})
   res.json({response: folders})
 }
 // get all subfolders from a folder
-export const readSubfolders = async () => {
+export const readSubfolders = async (req, res) => {
   const parentId = req.params.id
   const subfolders = await folderService.readFolders({parent : parentId})
   res.json({response: subfolders})
