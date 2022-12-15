@@ -15,13 +15,6 @@ const FolderListItem = ({ name, _id }) => {
     console.log(newSubFolder)
   }
 
-  // gather all subfolders and notes in this folder
-  const getFolderData = async () => { 
-    
-    const {response : subfolders} = await folderService.readSubFolders(_id)
-
-  }
-
   return (
     <>
     <div className='rootfolder'>
@@ -29,7 +22,7 @@ const FolderListItem = ({ name, _id }) => {
         <span>{name}</span>
         <button ref={buttonRef} onClick={() => setOpenMenu(!openMenu)} className='btn btn-icon'><Icon fontSize={'24px'} icon={'bi bi-plus'}/></button>
       </div>
-      {openFolder && <SubfolderList/>}
+      {openFolder && <SubfolderList parent={_id}/>}
     </div>
 
     {openMenu && <DropdownMenu anchorElement={buttonRef} show={(value) => setOpenMenu(value)} createSubfolder={createSubfolder}/>}
