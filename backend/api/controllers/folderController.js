@@ -1,4 +1,3 @@
-import res from 'express/lib/response.js'
 import * as folderService from '../services/folderService.js'
 
 // Returning and object with a response property to support adding message property in the future
