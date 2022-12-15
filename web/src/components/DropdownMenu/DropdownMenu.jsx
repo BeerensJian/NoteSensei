@@ -1,23 +1,27 @@
-import { useRef, useEffect } from "react"
+import { useRef, useEffect } from 'react'
 import DropdownListItem from '../DropdownListItem/DropdownListItem'
-import "./DropdownMenu.css"
+import './DropdownMenu.css'
 
 const DropdownMenu = ({ anchorElement, show }) => {
-  const ref = useRef(null);
+  const ref = useRef(null)
 
   // When the user clicks outside component -> close component
   useEffect(() => {
     const handleClickOutside = (event) => {
       console.log(!anchorElement.current.contains(event.target))
-      if (ref.current && !ref.current.contains(event.target) && !anchorElement.current.contains(event.target)) {
-        show(false);
+      if (
+        ref.current &&
+        !ref.current.contains(event.target) &&
+        !anchorElement.current.contains(event.target)
+      ) {
+        show(false)
       }
-    };
-    document.addEventListener("click", handleClickOutside, true);
+    }
+    document.addEventListener('click', handleClickOutside, true)
     return () => {
-      document.removeEventListener("click", handleClickOutside, true);
-    };
-  }, []);
+      document.removeEventListener('click', handleClickOutside, true)
+    }
+  }, [])
 
   // styling and placement
 
@@ -28,12 +32,12 @@ const DropdownMenu = ({ anchorElement, show }) => {
     // the amount of pixels from where the anchorElement is compared to the body
     left: anchorElement.current.offsetLeft,
     top: anchorElement.current.offsetTop,
-  };
+  }
 
   const styleObj = {
     top: offset.top + 'px',
     left: offset.left + offset.width + 5 + 'px',
-  };
+  }
 
   return (
     <div ref={ref} style={styleObj} className='dropdown-menu'>
@@ -41,7 +45,7 @@ const DropdownMenu = ({ anchorElement, show }) => {
       <DropdownListItem>Edit</DropdownListItem>
       <DropdownListItem>Create Note</DropdownListItem>
     </div>
-  );
-};
+  )
+}
 
-export default DropdownMenu;
+export default DropdownMenu

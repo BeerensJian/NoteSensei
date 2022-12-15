@@ -13,23 +13,21 @@ import Home from './views/Home/Home'
 import * as noteService from './services/noteService'
 import Test from './views/Test/Test'
 
-
-
 // implement react router
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <AppMenu/>,
-    errorElement: <Error/>,
+    element: <AppMenu />,
+    errorElement: <Error />,
     children: [
       {
         path: '/home',
-        element: <Home/>,
-        loader: noteService.getNotes
+        element: <Home />,
+        loader: noteService.getNotes,
       },
       {
         path: '/notes/create',
-        element: <CreateNote/>
+        element: <CreateNote />,
       },
       {
         path: '/notes/:id',
@@ -37,12 +35,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'test',
-        element: <Test/>
-      }
-    ]
+        element: <Test />,
+      },
+    ],
   },
 ])
-
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

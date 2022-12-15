@@ -1,28 +1,28 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import SubfolderListItem from "../SubfolderListItem/SubfolderListItem";
-import * as folderService from "../../services/folderService";
-import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import { useEffect } from 'react'
+import { useState } from 'react'
+import SubfolderListItem from '../SubfolderListItem/SubfolderListItem'
+import * as folderService from '../../services/folderService'
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
 
 const SubfolderList = ({ parent }) => {
-  const [folders, setFolders] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [folders, setFolders] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     // load all subfolders and notes from the parent folder
     const fetchChildren = async () => {
-      setLoading(true);
+      setLoading(true)
       const { response: subfolders } = await folderService.readSubFolders(
         parent
-      );
-      setFolders(subfolders);
-      setLoading(false);
-    };
-    fetchChildren();
-  }, []);
+      )
+      setFolders(subfolders)
+      setLoading(false)
+    }
+    fetchChildren()
+  }, [])
 
   const subList = (
-    <div className="subfolder-list">
+    <div className='subfolder-list'>
       {folders.length === 0 ? (
         <p>No items in this folder</p>
       ) : (
@@ -31,10 +31,6 @@ const SubfolderList = ({ parent }) => {
     </div>
   )
 
-  return (
-    <>
-    {loading ? <LoadingSpinner/> : subList}
-    </>
-  );
-};
-export default SubfolderList;
+  return <>{loading ? <LoadingSpinner /> : subList}</>
+}
+export default SubfolderList

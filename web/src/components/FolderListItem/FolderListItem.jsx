@@ -11,21 +11,46 @@ const FolderListItem = ({ name, _id }) => {
   const buttonRef = useRef()
 
   const createSubfolder = async (name) => {
-    const {response : newSubFolder} = await folderService.createFolder({name, parent : _id})
+    const { response: newSubFolder } = await folderService.createFolder({
+      name,
+      parent: _id,
+    })
     console.log(newSubFolder)
   }
 
   return (
     <>
-    <div className='rootfolder'>
-      <div onClick={() => setOpenFolder(!openFolder)} className='rootfolder__li' style={{outline: '1px solid white', backgroundColor: 'blue', display: 'flex', justifyContent: 'space-between	', alignItems: 'center'}}>
-        <span>{name}</span>
-        <button ref={buttonRef} onClick={() => setOpenMenu(!openMenu)} className='btn btn-icon'><Icon fontSize={'24px'} icon={'bi bi-plus'}/></button>
+      <div className='rootfolder'>
+        <div
+          onClick={() => setOpenFolder(!openFolder)}
+          className='rootfolder__li'
+          style={{
+            outline: '1px solid white',
+            backgroundColor: 'blue',
+            display: 'flex',
+            justifyContent: 'space-between	',
+            alignItems: 'center',
+          }}
+        >
+          <span>{name}</span>
+          <button
+            ref={buttonRef}
+            onClick={() => setOpenMenu(!openMenu)}
+            className='btn btn-icon'
+          >
+            <Icon fontSize={'24px'} icon={'bi bi-plus'} />
+          </button>
+        </div>
+        {openFolder && <SubfolderList parent={_id} />}
       </div>
-      {openFolder && <SubfolderList parent={_id}/>}
-    </div>
 
-    {openMenu && <DropdownMenu anchorElement={buttonRef} show={(value) => setOpenMenu(value)} createSubfolder={createSubfolder}/>}
+      {openMenu && (
+        <DropdownMenu
+          anchorElement={buttonRef}
+          show={(value) => setOpenMenu(value)}
+          createSubfolder={createSubfolder}
+        />
+      )}
     </>
   )
 }
