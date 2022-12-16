@@ -1,13 +1,13 @@
 // Third Part Imports
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react"
 
 // css
-import './folderMenu.css'
+import "./folderMenu.css"
 
 // Component Imports
-import FolderListItem from '../FolderListItem/FolderListItem'
-import * as folderService from '../../services/folderService'
-import CreateFolderModal from '../Modal/CreateFolderModal'
+import FolderListItem from "../FolderListItem/FolderListItem"
+import * as folderService from "../../services/folderService"
+import { CreateFolderModal } from "../Modal/PremadeModals"
 
 const FolderMenu = () => {
   const [folders, setFolders] = useState([])

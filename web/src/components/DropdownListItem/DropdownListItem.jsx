@@ -1,7 +1,8 @@
-import './DropdownListItem.css'
-import Modal from '../Modal/Modal'
+import "./DropdownListItem.css"
+import Modal from "../Modal/Modal"
+import { useState } from "react"
 
-const DropdownListItem = ({ children, action }) => {
+const DropdownListItem = ({ children, text }) => {
   // TODO What do we need to show in model
   // - folder ID
   // - fields -> if we wanna enter many fields, how do we do that?
@@ -15,7 +16,7 @@ const DropdownListItem = ({ children, action }) => {
       <button onClick={action} className='dropdown-listitem'>
         <span>{children}</span>
       </button>
-      {openModal && <Modal />}
+      {openModal && children}
     </>
   )
 }

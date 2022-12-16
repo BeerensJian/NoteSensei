@@ -1,9 +1,9 @@
-import Icon from '../Icon/Icon'
-import * as folderService from '../../services/folderService'
-import DropdownMenu from '../DropdownMenu/DropdownMenu'
-import { useState, useRef } from 'react'
-import SubfolderList from '../SubfolderList/SubfolderList'
-import './FolderListItem.css'
+import Icon from "../Icon/Icon"
+import * as folderService from "../../services/folderService"
+import DropdownMenu from "../DropdownMenu/DropdownMenu"
+import { useState, useRef } from "react"
+import SubfolderList from "../SubfolderList/SubfolderList"
+import "./FolderListItem.css"
 
 const FolderListItem = ({ name, _id }) => {
   const [openMenu, setOpenMenu] = useState(false)
@@ -25,20 +25,23 @@ const FolderListItem = ({ name, _id }) => {
           onClick={() => setOpenFolder(!openFolder)}
           className='rootfolder__li'
           style={{
-            outline: '1px solid white',
-            backgroundColor: 'blue',
-            display: 'flex',
-            justifyContent: 'space-between	',
-            alignItems: 'center',
+            outline: "1px solid white",
+            backgroundColor: "blue",
+            display: "flex",
+            justifyContent: "space-between	",
+            alignItems: "center",
           }}
         >
           <span>{name}</span>
           <button
             ref={buttonRef}
-            onClick={() => setOpenMenu(!openMenu)}
+            onClick={(e) => {
+              e.stopPropagation()
+              setOpenMenu(!openMenu)
+            }}
             className='btn btn-icon'
           >
-            <Icon fontSize={'24px'} icon={'bi bi-plus'} />
+            <Icon fontSize={"24px"} icon={"bi bi-plus"} />
           </button>
         </div>
         {openFolder && <SubfolderList parent={_id} />}

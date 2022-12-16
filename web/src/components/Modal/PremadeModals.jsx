@@ -1,18 +1,20 @@
 // Third Party Imports
-import { useState } from 'react'
+import { useState } from "react"
 // Local imports
-import Modal from './Modal'
-import * as folderService from '../../services/folderService'
+import Modal from "./Modal"
+import * as folderService from "../../services/folderService"
 
 /**
  *
+ * COLLECTION OF MODALS FOR DIFFERENT USE CASES
+ *
  * @param closeModal - A Function that unmounts/closes the Modal component
- * @param reload - If needed after you created a folder pass a function to update the UI
+ * @param reload - If needed after you created a folder/item pass a function to update the UI
  * @returns Component
  */
 
-const CreateFolderModal = ({ closeModal, reload }) => {
-  const [folderName, setFolderName] = useState('')
+export const CreateFolderModal = ({ closeModal, reload }) => {
+  const [folderName, setFolderName] = useState("")
 
   const createFolder = async () => {
     await folderService.createFolder({ name: folderName })
@@ -32,4 +34,3 @@ const CreateFolderModal = ({ closeModal, reload }) => {
     </Modal>
   )
 }
-export default CreateFolderModal

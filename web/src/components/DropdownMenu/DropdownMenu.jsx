@@ -1,6 +1,7 @@
-import { useRef, useEffect } from 'react'
-import DropdownListItem from '../DropdownListItem/DropdownListItem'
-import './DropdownMenu.css'
+import { useRef, useEffect } from "react"
+import DropdownListItem from "../DropdownListItem/DropdownListItem"
+import { CreateFolderModal } from "../Modal/PremadeModals"
+import "./DropdownMenu.css"
 
 const DropdownMenu = ({ anchorElement, show }) => {
   const ref = useRef(null)
@@ -17,9 +18,9 @@ const DropdownMenu = ({ anchorElement, show }) => {
         show(false)
       }
     }
-    document.addEventListener('click', handleClickOutside, true)
+    document.addEventListener("click", handleClickOutside, true)
     return () => {
-      document.removeEventListener('click', handleClickOutside, true)
+      document.removeEventListener("click", handleClickOutside, true)
     }
   }, [])
 
@@ -35,15 +36,16 @@ const DropdownMenu = ({ anchorElement, show }) => {
   }
 
   const styleObj = {
-    top: offset.top + 'px',
-    left: offset.left + offset.width + 5 + 'px',
+    top: offset.top + "px",
+    left: offset.left + offset.width + 5 + "px",
   }
 
   return (
     <div ref={ref} style={styleObj} className='dropdown-menu'>
-      <DropdownListItem>Create Subfolder</DropdownListItem>
-      <DropdownListItem>Edit</DropdownListItem>
-      <DropdownListItem>Create Note</DropdownListItem>
+      <DropdownListItem text='Create Subfolder'>C</DropdownListItem>
+      <DropdownListItem text='Create note'></DropdownListItem>
+      <DropdownListItem text='Edit'>Edit</DropdownListItem>
+      <DropdownListItem text='Delete'>Create Note</DropdownListItem>
     </div>
   )
 }
